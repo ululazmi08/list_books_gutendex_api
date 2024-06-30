@@ -14,17 +14,4 @@ class TStyle {
     color: kColorRegTxtBlack,
     fontFamily: 'Sen',
   );
-  static TextStyle successTxt = const TextStyle(
-    fontWeight: FontWeight.w500,
-    fontSize: 22,
-    color: kColorTxtSuccess,
-    fontFamily: 'Sen',
-
-  );
-  static TextStyle introTxt = const TextStyle(
-    fontWeight: FontWeight.w800,
-    fontSize: 24,
-    color: kColorRegTxtBlack,
-    fontFamily: 'Sen',
-  );
 }

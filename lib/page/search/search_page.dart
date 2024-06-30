@@ -31,7 +31,7 @@ class SearchPage extends StatelessWidget {
                     color: kColorBlack.withOpacity(0.25),
                     blurRadius: 4,
                     spreadRadius: 0,
-                    offset: Offset(0, 0),
+                    offset: const Offset(0, 0),
                   )
                 ],
               ),
@@ -41,7 +41,7 @@ class SearchPage extends StatelessWidget {
                     onPressed: () {
                       Get.back();
                     },
-                    icon: Icon(Icons.arrow_back_rounded),
+                    icon: const Icon(Icons.arrow_back_rounded),
                   ),
                   Expanded(
                     child: TextField(
