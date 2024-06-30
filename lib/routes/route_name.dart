@@ -1,3 +1,3 @@
 abstract class RouteName {
-  static const search = '/detail';
+  static const search = '/search';
 }
