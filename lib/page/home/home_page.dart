@@ -52,36 +52,41 @@ class HomePage extends StatelessWidget {
   }
 
   Widget searchBar() {
-    return Container(
-      width: Get.width,
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        color: kColorWhite,
-        boxShadow: [
-          BoxShadow(
-            color: kColorBlack.withOpacity(0.25),
-            blurRadius: 4,
-            spreadRadius: 0,
-            offset: const Offset(0, 0),
-          )
-        ],
-      ),
-      child: Material(
-        color: kColorForm,
-        borderRadius: BorderRadius.circular(10),
-        child: InkWell(
-          onTap: () {
-            Get.toNamed(RouteName.search);
-          },
-          borderRadius: BorderRadius.circular(10),
-          child: TextField(
-            onChanged: (value) async {},
-            enabled: false,
-            decoration: kDecorationForm.copyWith(
-                filled: false, hintText: 'search', alignLabelWithHint: true),
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.all(18),
+            decoration: BoxDecoration(
+              color: kColorWhite,
+              boxShadow: [
+                BoxShadow(
+                  color: kColorBlack.withOpacity(0.25),
+                  blurRadius: 4,
+                  spreadRadius: 0,
+                  offset: const Offset(0, 0),
+                )
+              ],
+            ),
+            child: Material(
+              color: kColorForm,
+              borderRadius: BorderRadius.circular(10),
+              child: InkWell(
+                onTap: () {
+                  Get.toNamed(RouteName.search);
+                },
+                borderRadius: BorderRadius.circular(10),
+                child: TextField(
+                  onChanged: (value) async {},
+                  enabled: false,
+                  decoration: kDecorationForm.copyWith(
+                      filled: false, hintText: 'search', alignLabelWithHint: true),
+                ),
+              ),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 
