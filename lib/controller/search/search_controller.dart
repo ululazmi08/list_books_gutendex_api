@@ -33,7 +33,7 @@ class SearchPageController extends GetxController {
   void onSearchChanged(String value) {
     if (_timer?.isActive ?? false) _timer?.cancel();
     _timer = Timer(const Duration(milliseconds: 500), () {
-      searchListBooks(query: value);
+      searchListBooks(query: value, reset: true);
     });
   }
 
@@ -51,6 +51,11 @@ class SearchPageController extends GetxController {
       String encodedQuery = Uri.encodeComponent(query);
       var data = await BookServices.searchListBooks(page.value, encodedQuery);
       if (data != null) {
+        if(data.containsKey('detail')){
+          print('Error response: ${data['detail']}');
+          refreshController.loadNoData(); // Or any other appropriate action
+          enablePullUp.value = false;
+        }
         page.value += 1;
         var dataList = data['results'] as List;
         List<ListBookModel> list =
